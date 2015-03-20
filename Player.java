@@ -48,17 +48,18 @@ public class Player {
 		Scanner in = new Scanner(System.in);
         System.out.println("Please enter your next hand: Just enter 'rock', 'paper', 'scissor', or 'r', 'p', 's', or 0 for rock, 1 for paper, 2 for scissor\n");
         String input = in.nextLine();
-        if ( input.charAt(0) - 48 == 0 || input.charAt(0) == 'r' || input == "rock" ) { hand = 0; } // rock
-        else if ( input.charAt(0) - 48 == 1 || input.charAt(0) == 'p' || input == "paper" ) { hand = 1; } // paper
-        else if ( input.charAt(0) - 48 == 2 || input.charAt(0) == 's' || input == "scissor" ) { hand = 2; } // scissor
+        if ( input.charAt(0) - 48 == 0 || (input.charAt(0) == 'r'&&input.length()==1) || input.equals("rock") ) { hand = 0; } // rock
+        else if ( input.charAt(0) - 48 == 1 || (input.charAt(0) == 'p'&&input.length()==1) || input.equals("paper") ) { hand = 1; } // paper
+        else if ( input.charAt(0) - 48 == 2 || (input.charAt(0) == 's'&&input.length()==1) || input.equals("scissor") ) { hand = 2; } // scissor
         else { System.out.print("User input format error\n"); user_play(); } // try again
     }
 	public boolean user_progress() {
 		Scanner in = new Scanner(System.in);
         System.out.print("Continue? 'y' for yes and 'n' for no\n");
         String input = in.nextLine();
-        if ( input == "y" ) return true;
-        else if ( input == "n" ) return false;
+        System.out.println(input);
+        if ( input.equals("y") ) return true;
+        else if ( input.equals("n") ) return false;
         else { System.out.print("user continue input wrong format\n"); return user_progress(); } // try again
     }
 }

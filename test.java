@@ -3,10 +3,9 @@ package helloworld;
 public class test {
 	public static void main(String[] argv){
 		System.out.print("Welcome to rock, paper, and scissors\n");
-	    boolean test = true; // set to true to debug and test
+	    boolean test = false; // set to true to debug and test
 	    Player user = new Player(), computer = new Player();
 	    Game game = new Game(user, computer);
-	    
 	    int count = 0;
 	    if ( !test ) {
 	        while ( true ) {
@@ -33,9 +32,6 @@ public class test {
 	        }
 	        game.print();
 	    }
-	    
-	    System.out.print("Game over, thank you for playing!\n");
-
-	    
+	    System.out.print("Game over, thank you for playing!\n"); 
 	}
 }
