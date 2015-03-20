@@ -13,7 +13,7 @@ public class Game {
 		computer = computerr;
 		round_id = 0;
 	}
-	public void play_round () {
+	public int play_round () {
         int win_or_lose_or_equal = -1;
         if ( (user.get_hand() == 0 && computer.get_hand() == 1) || (user.get_hand() == 1 && computer.get_hand() == 2) || (user.get_hand() == 2 && computer.get_hand() == 0) ) { // rock-paper or paper-scissor or scissor-rock: user loses
             user.set_win_or_lose(1);
@@ -33,6 +33,7 @@ public class Game {
         //int user_hand = user.get_hand(), computer_hand = computer.get_hand(); // used for sql statement below
         //stmt->execute("INSERT INTO Rounds(table_round_id, table_user_hand, table_computer_hand, table_win_or_lose_or_equal) VALUES (game_round_id, user_hand, computer_hand, win_or_lose_or_equal)");
         round_id++;
+        return win_or_lose_or_equal;
     }
 	public void print_round () {
         System.out.print("user hand: ");
