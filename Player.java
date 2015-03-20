@@ -34,7 +34,6 @@ public class Player {
 	public void computer_play (Player user) {
 		Random generator = new Random();
         int rand_num = generator.nextInt(10);
-        //System.out.print("用户出 " + user.get_hand() + ", 电脑rand出 " + rand_num + "\n");
         if ( rand_num >= 0 && rand_num <= 2 ) hand = (0 + user.get_hand()) % 3; // user loses
         else if ( rand_num >= 3 && rand_num <= 5 ) hand = (1 + user.get_hand()) % 3; // user equals
         else if ( rand_num >= 6 && rand_num <= 9 ) hand = (2 + user.get_hand()) % 3; // user wins
